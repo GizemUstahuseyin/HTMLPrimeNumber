@@ -1,0 +1,37 @@
+<DOCTYPE! HTML>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <title>AsalSayiKontrol</title>
+    </head>
+    <body>
+        <p>0-100 ARALIGINDA BIR SAYI GIRINIZ: <input type="text" name="sayi" id="num"/></p>
+        <button type="button" onclick="asalKont()">Kontrol et!</button>
+        <p id="sonuc"></p>
+
+        <script>
+            function asalKont() {
+                var x = parseInt(document.getElementById('num').value);
+
+                if (x < 0 || x > 100) {
+                    document.getElementById('sonuc').innerHTML = "GIRDIGINIZ SAYI 0-100 ARALIGINDA DEGIL!";
+                }
+                else {
+                    if (x % 2 == 0 || x % 3 == 0 || x % 5 == 0 || x % 7 == 0) {
+                        if (x == 2 || x == 3 || x == 5 || x == 7) {
+                            document.getElementById('sonuc').innerHTML = "GIRILEN SAYI ASAL!";
+                        }
+                        else {
+                            document.getElementById('sonuc').innerHTML = "GIRILEN SAYI ASAL DEGIL!";
+                        }
+                       
+                    }
+                    else {
+                        document.getElementById('sonuc').innerHTML = "GIRILEN SAYI ASAL!";
+                    }
+                }
+            }
+        </script>
+
+    </body>
+</html>
